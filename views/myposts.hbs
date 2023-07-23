@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Feed</title>
+    <script src="https://kit.fontawesome.com/4810801808.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/postpage.css">
+    <script defer src="./scripts/myposts.js"></script>
+    <style>
+        .aa{
+            background-color:rgb(240, 240, 241);
+            min-height: 707px; 
+            }
+    </style>
+</head>
+<body>
+    <!-- navbar code starts here -->
+    {{> navbar}}
+    <!-- navbar ends here -->
+    <div class="mainarea aa">     <!--for grey background -->
+        <br><br>
+        <div class="flexarea">
+            <div class="categories">
+                <button class="category" style="background-color: #dad8d8;">+ Create Space</button>
+                <button class="category">Immigration & Visas club</button>
+                <button class="category">Joint Entrance</button>
+                <button class="category">Higher Education</button>
+                <button class="category">Physics</button>
+                <button class="category">Chemistry</button>
+                <button class="category">Maths</button>
+            </div>
+           
+            <!-- scrolling post part starts here -->
+            <div class="postsarea">
+                <h1>{{mess1}}</h1><br>
+                <h1>My Feed</h1><br><br>
+                <h1  >{{mess}}</h1>
+                {{#each posts as |post| }}
+                <div class="mainpost1">
+                    <div class="myposthead" style="display:flex; justify-content:space-between">
+                        <div class="postnamepart">
+                        <img class="ownerimg" src="https://qph.cf2.quoracdn.net/main-thumb-76332267-50-prmgllgyccadzfendyofmqgcrcskbywx.jpeg">
+                        <span class="postowner">Reyansh Mishra <a href="#" class="follow" > Follow</a><br>
+                            <span style="color:#808080; font-weight: 100;"> Programmer</span>
+                        </span>
+                        </div>
+                        <div class="mypostoption">  
+                            <button style="border:none; font-size:large; padding: 10px;"><a class="hidebtn" href="/updatepost?id={{post._id}}">✏️</a> </button>
+                            <button class="delbtn"  post_id="{{post._id}}" style="border:none; font-size:large; padding: 10px;">💀 </button>
+                        </div>
+                    </div>
+                    
+                    <!-- link post page here -->
+                    <a href="#" class="posttitle" style="font-size: 25px;">    {{post.title}}   </a>
+                    <div class="postintro">                                    {{post.description}}</div>
+                    <img src="{{post.imageurl}}" alt="not available" class="postimage">
+                </div>
+                
+                {{/each}}
+                                
+            </div>
+            {{!-- <div class="ads" >  advertisement</div> --}}
+        </div>
+    </div>
+    </div>
+    <div class="confirmbox">
+        <br><br>
+        You are trying to permanently delete the post.<br>
+        Are you sure.....<br>
+    <button id="del" style="border:none; font-size:large; padding: 10px;"><a class="hidebtn" href="/deletepost?id={{post._id}}">OK</a> </button>
+    <button id="canceldelbtn" style="border:none; font-size:large; padding: 10px;">Cancel</button>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+</html>

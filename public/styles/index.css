@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-image: url('https://qph.cf2.quoracdn.net/main-qimg-b5faebde65208b4e09af0a85b3893ddd-lq');
+    height: 700px;
+    width: 100%;
+    z-index: 1;
+}
+.main{
+    position: absolute;
+    top: 70px;
+    left: 400px;
+    background-color: white;
+    width: 700px;
+    height: 550px;
+    /* margin: auto; */
+    /* margin-top: 100px; */
+    z-index: 2;
+}
+.heading{
+    color: brown;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 60px;
+    font-family: sans-serif;
+}
+.smallline{
+    margin-left: 170px;
+    font-size: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.flexparent{
+    display: flex;
+}
+.left{
+    border-right: 2px solid rgb(227, 224, 224);
+    height: 350px;
+    margin-top: 20px;
+
+}
+.btns{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 100px;
+    row-gap: 30px;
+}
+.leftbtn{
+    background-color: white;
+    width: 300px;
+    height: 50px;
+    border-color: rgb(227, 224, 224);
+}
+.rightparent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 30px;
+    row-gap: 20px;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+input{
+    width: 300px;
+    height: 50px;
+    margin-bottom:20px;
+}
+.signup,.login{
+    background-color: blue;
+    color: white;
+    /* margin-left: 200px; */
+    height: 40px;
+    width: 90px;
+    border-radius: 60%;
+    border: 1px solid blue;
+}
+.bottom{
+    font-size: 15px;
+    padding-left: 60px;
+    padding-top: 20px;
+    height: 50px;
+    background-color: rgb(227, 224, 224);
+    font-family: sans-serif;
+}

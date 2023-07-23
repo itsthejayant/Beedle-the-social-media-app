@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Feed</title>
+    <script src="https://kit.fontawesome.com/4810801808.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/postpage.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="./scripts/messages.js"></script>
+    <style>
+        .aa{
+            background-color:rgb(240, 240, 241);
+            height: 100vi; 
+            }
+    </style>
+</head>
+<body>
+    <!-- navbar code starts here -->
+    {{> navbar}}
+    <!-- navbar ends here -->
+    <div class="mainarea aa">     <!--for grey background -->
+        <br><br><br>
+        <div class="flexarea">
+            <div class="categories">
+                <button class="category" style="background-color: #dad8d8;">+ Create Space</button>
+                <button class="category">Immigration & Visas club</button>
+                <button class="category">Joint Entrance</button>
+                <button class="category">Higher Education</button>
+                <button class="category">Physics</button>
+                <button class="category">Chemistry</button>
+                <button class="category">Maths</button>
+            </div>
+           
+            <!-- scrolling post part starts here -->
+            <div class="postsarea">
+                <h1>{{mess1}}</h1><br>
+                <h1>Messages</h1><br>
+                    <input id="msg" type="text">
+                    <button id="btn">Send</button>
+                    <div class="list"></div>                    
+            </div>
+            {{!-- <div class="ads" >  advertisement</div> --}}
+        </div>
+    </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+</html>
