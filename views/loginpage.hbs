@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./../styles/index.css">
     <script defer src="./scripts/loginscript.js"></script>
 </head>
 <body>
         <div class="main">
-            <h1 class="heading">QUORA</h1>
+            <h1 class="heading">BEEDLE</h1>
             <span class="smallline">A place to share knowledge and better understand the world</span>
             <div class="flexparent">
                 <div class="left">
@@ -23,12 +25,18 @@
                         <h3 style="width: 220px;">Login</h3>
                         <hr style="width: 270px;">
                         <h3 style="font-size: 10px;">Email</h3>
-                        <form action="/login" method="POST">
+                        <form action="/logins/login" method="POST">
                             <input placeholder=" username" name="username" type="text" class="username"><br>
-                            <span style="color:red;" >{{mess}}</span>  <br><br>
+                            <span style="color:red;" >{{mess}}</span>
+                                {{!-- {{#if flash.error}}
+                                <div class="alert alert-danger"> --}}
+                                {{flash.error}}
+                                {{!-- </div>
+                                {{/if}} --}}
+                            <br><br>
                             <h3 style="font-size: 10px; margin-bottom: 20px;">Password</h3>
                             <input placeholder=" password" name="password" type="password" class="password">
-                            <button type="submit" class="signup"  formaction="/signup" style="margin-left: 20px;">Sign Up</button>
+                            <button type="submit" class="signup"  formaction="/logins/signup" style="margin-left: 20px;">Sign Up</button>
                             <button type="submit" class="login" style="margin-left: 80px;">Login</button>
                         </form>
                     </div>

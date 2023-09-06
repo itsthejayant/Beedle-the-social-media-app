@@ -18,6 +18,6 @@ socket.on('login',(msg)=>{
 })
 socket.on('reply',(msg)=>{
     let div = document.createElement('div');
-    div.innerText = `message received : ${msg.msg}`;
+    div.innerText = `message received: ${msg.msg}`;
     list.appendChild(div);
 })

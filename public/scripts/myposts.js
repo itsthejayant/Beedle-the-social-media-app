@@ -11,7 +11,7 @@ delbtns.forEach((delbtn)=>{
         if(confirm("You are trying to permanently delete the post. Are you sure.....") == true )     {
             let x= delbtn.parentElement.parentElement.parentElement;
             postsarea.removeChild(x);
-            axios.post('/deletepost',{id})
+            axios.post('/mypost/deletepost',{id})
             .then(()=>{
             })
             .catch((err)=>{

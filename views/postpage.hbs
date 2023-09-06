@@ -18,7 +18,7 @@
         <br><br>
         <div class="flexarea">
             <div class="categories">
-                <button class="category" style="background-color: #dad8d8;">+ Create Space</button>
+                {{!-- <button class="category" style="background-color: #dad8d8;">+ Create Space</button> --}}
                 <button class="category">Immigration & Visas club</button>
                 <button class="category">Joint Entrance</button>
                 <button class="category">Higher Education</button>
@@ -31,7 +31,7 @@
             <div class="postsarea">
                 <div class="askbox">
                     <button class="j" style="margin: 10px;"> *</button>
-                    <button class="add_question2"> What do you want to ask or share?</button>
+                    <button class="add_question2"> What do you want to share?</button>
                     <div class="insideaskbox">
                        <button class="insideaskboxoptions">Think</button>
                        <button class="insideaskboxoptions">Create</button>
@@ -104,27 +104,11 @@
     </div>
     <!-- create post box starts here -->
     <div class="createbox"> 
-        <span class="hidebtn">❌</span>
-        <div class="options">
-            <span class="optionbtn askquestion"> Ask Question </span>
-            <span class="optionbtn createpost"> Create Post </span>
-        </div>
-        <form class="questionform" action="/addquestion" method="POST">
-        <input name="question" placeholder="write question..." type="text" style="width:92%; font-size:25px; padding:20px; height:60px; border:none;">
-        <button class="questionbtn" type="submit" style="margin:150px 280px; background-color:blue; color:white; border-radius:10px; padding:10px 30px;"
-        >Submit</button>
-        </form>
-        {{!-- <form class="postinfoform" action="/addpost" method="POST">
-        <br><br>
-        <input name="title" placeholder="Give your post title here..." type="text" style="width:50%; font-size:25px; padding:5px; height:40px; border:none;"><br>
-        <input name="description" placeholder="Describe your post here..." type="text" style="width:80%; font-size:20px; padding:5px; height:80px; border:none;"><br>
-        <input name="imageurl" placeholder="Give url of image here..." type="text" style="width:80%; font-size:20px; padding:5px; height:30px; border:none;"><br>
-        <button class="questionbtn" type="submit" style="margin:100px 280px; background-color:blue; color:white; border-radius:10px; padding:10px 30px;">
-        Add Post</button>
-        </form> --}}
-         <div class="login-box" >
+        <div class="hidebtn">❌</div>
+            <div class="postformheading"> Be Creative 👻</div>
+       <div class="login-box" >
             {{!-- <h2>Login</h2> --}}
-            <form action="/addpost" method="POST">
+            <form action="/main/addpost" method="POST">
                 <div class="user-box">
                 <input type="text" name="title"  id="title" >
                 <label>Post Title</label>
@@ -146,7 +130,20 @@
                 {{!-- </a> --}}
             </form>
             </div>
-                   <div class="info" >View Comments</div>
+        {{!-- <form class="questionform" action="/addquestion" method="POST">
+        <input name="question" placeholder="write question..." type="text" style="width:92%; font-size:25px; padding:20px; height:60px; border:none;">
+        <button class="questionbtn" type="submit" style="margin:150px 280px; background-color:blue; color:white; border-radius:10px; padding:10px 30px;"
+        >Submit</button>
+        </form> --}}
+        {{!-- <form class="postinfoform" action="/addpost" method="POST">
+        <br><br>
+        <input name="title" placeholder="Give your post title here..." type="text" style="width:50%; font-size:25px; padding:5px; height:40px; border:none;"><br>
+        <input name="description" placeholder="Describe your post here..." type="text" style="width:80%; font-size:20px; padding:5px; height:80px; border:none;"><br>
+        <input name="imageurl" placeholder="Give url of image here..." type="text" style="width:80%; font-size:20px; padding:5px; height:30px; border:none;"><br>
+        <button class="questionbtn" type="submit" style="margin:100px 280px; background-color:blue; color:white; border-radius:10px; padding:10px 30px;">
+        Add Post</button>
+        </form> --}}
+                   {{!-- <div class="info" >View Comments</div> --}}
     
     </div>
  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

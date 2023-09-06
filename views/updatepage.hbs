@@ -52,26 +52,8 @@
             <!-- scrolling post part starts here -->
             <div class="postsarea">
                 <h1>My Feed <br>Update Page</h1>
-                    {{!-- <div class="mainpost1">
-                    <div class="myposthead" style="display:flex; justify-content:space-between">
-                        <div class="postnamepart">
-                        <img class="ownerimg" src="https://qph.cf2.quoracdn.net/main-thumb-76332267-50-prmgllgyccadzfendyofmqgcrcskbywx.jpeg">
-                        <span class="postowner">Reyansh Mishra <a href="#" class="follow" > Follow</a><br>
-                            <span style="color:#808080; font-weight: 100;"> Programmer</span>
-                        </span>
-                        </div>
-                        <div class="mypostoption">  
-                            <button style="border:none; font-size:large; padding: 10px;"><a class="hidebtn" href="/updatepost?id={{post._id}}">✏️</a> </button>
-                            <button id="delbtn" style="border:none; font-size:large; padding: 10px;"><a class="hidebtn" href="/deletepost?id={{post._id}}">💀</a> </button>
-                        </div>
-                    </div>
-                    
-                    <!-- link post page here -->
-                    <a href="#" class="posttitle" style="font-size: 25px;">    {{post.title}}   </a>
-                    <div class="postintro">                                    {{post.description}}</div>
-                    <img src="{{post.imageurl}}" alt="not available" class="postimage">
-                </div> --}}
-                <form action="/updatepost" method="POST">
+        
+                <form action="/mypost/updatepost" method="POST">
                 <label class="uplabel" for="title"> Title</label><br>
                 <input class="upinp" value="{{post.title}}" name="title" type="text"><br><br>
                 <label class="uplabel" for="title"> Description</label><br>

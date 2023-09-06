@@ -232,11 +232,11 @@
    padding-top: 5px;
     height: 500px;
     width: 700px;
-    background-color: rgb(253, 250, 250);
+    background-color: rgb(131, 108, 108);
     box-shadow:
-    0 0 60px 30px #fff,  /* inner white */
-    0 0 100px 60px rgb(238, 169, 238), /* middle magenta */
-    0 0 140px 90px rgb(147, 245, 245); /* outer cyan */
+    0 0 30px 30px #fff,  /* inner white */
+    0 0 30px 30px rgb(56, 28, 56); /* middle magenta */
+    /* 0 0 140px 90px rgb(16, 72, 72); outer cyan */
     
     /* display:flex;
     flex-direction: row; */
@@ -250,25 +250,25 @@
     visibility: hidden;
 }
 .hidebtn{
-    padding: 7px;
-    text-decoration: none;}
+  padding: 5px 0;
+  text-align: center;
+  font-size: 10px;
+  width: 40px;
+  height: 20px;
+  transition: transform .2s;
+}
 .hidebtn:hover{
-   background-color: #dadada;
-   border-radius: 8px;
-   cursor: pointer;
+  cursor: pointer;
+  transform: scale(1.8);
 }
-.options{
-    margin-top: 20px;
-    /* display: flex; */
-    font-family: sans-serif;
-    /* justify-content: space-around; */
-    /* flex-wrap: wrap; */
+.postformheading{
+  text-align: center;
+  font-size: 50px;
+  color: darkorange;
+  height: 50px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
-.optionbtn{
-    padding: 20px 110px;
-    border-color: white;
-    background-color: white;
-}
+
 .askquestion{
     border-bottom: 3px solid blue;
 }
@@ -302,7 +302,7 @@
   
   .login-box {
     position: absolute;
-    visibility: hidden;
+    /* visibility: hidden; */
     top: 60%;
     left: 50%;
     width: 680px;
@@ -374,9 +374,9 @@
     color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px #03e9f4,
-                0 0 25px #03e9f4,
-                0 0 50px #03e9f4,
-                0 0 100px #03e9f4;
+                0 0 5px #03e9f4,
+                0 0 5px #03e9f4,
+                0 0 5px #03e9f4;
   }
   
   .login-box .postbtn span {

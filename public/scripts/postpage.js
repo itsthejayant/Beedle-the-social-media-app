@@ -3,7 +3,7 @@ const mainarea= document.querySelector('.mainarea');
 const askbox = document.querySelector('.askbox');
 const createbox= document.querySelector('.createbox')
 const hidebtn = document.querySelector('.hidebtn');
-const createpost= document.querySelector('.createpost');
+const postformheading= document.querySelector('.postformheading');
 const askquestion= document.querySelector('.askquestion');
 const questionform= document.querySelector('.questionform');
 const postform = document.querySelector('.login-box');
@@ -24,7 +24,7 @@ newcomments.forEach((newcomment)=>{
         // console.log(commentinput);
         let comment = commentinput.value;
         console.log(comment,id);
-        axios.post('/addcomment',{id,comment})
+        axios.post('/likecomment/addcomment',{id,comment})
         .then((mess)=>{
             if(mess.data == "pehle login in to karle yaar"){
                 alert("Login/Sign in to comment");
@@ -52,7 +52,7 @@ commentbtns.forEach((commentbtn)=>{
             let id = commentbtn.getAttribute('post_id');
             commentbtn.classList.add('b');
             let com = commentbtn.parentElement.nextElementSibling.nextElementSibling;
-            axios.post('/getallcomments',{id})
+            axios.post('/likecomment/getallcomments',{id})
             .then((comments)=>{
                 // console.log(comments.data);
                 let m = comments.data;
@@ -77,7 +77,7 @@ commentbtns.forEach((commentbtn)=>{
                     com.appendChild(div1);
                     div1.appendChild(a);
                     com.appendChild(div2);
-                        axios.post('/getcommentreplies',{message})
+                        axios.post('/likecomment/getcommentreplies',{message})
                         .then((replies)=>{
                             if(replies.data.length != 0){
                                 let div = document.createElement('div');
@@ -122,7 +122,7 @@ postsarea.addEventListener("click", (ev)=>{
             let comMess = replybtn.parentElement.nextElementSibling;
             let message = comMess.innerHTML;
             // console.log(message);
-            axios.post('/getcommentid',{message})
+            axios.post('/likecomment/getcommentid',{message})
             .then((id)=>{
                 let inp = document.createElement('input');
                 inp.classList.add('inpreply');
@@ -155,12 +155,15 @@ postsarea.addEventListener("click", (ev)=>{
     if(ev.target.classList.contains('replycomment2')){
         let text = ev.target.previousElementSibling.value;
         let id = ev.target.previousElementSibling.getAttribute('commentid');
-        // console.log(text);        console.log(id);
-        axios.post('addreply',{id,text})
-        .then((m)=>{
-            // console.log(m.data);
+        axios.post('/likecomment/addreply',{id,text})
+        .then((mess)=>{
+            if(mess.data == "pehle login in to karle yaar"){
+                alert("Login/Sign in to reply to comment");
+            }
+            if(mess.data == "Reply Added"){
+                alert("Reply Added suceddfully");
+            }
             ev.target.previousElementSibling.value= "";
-            alert('reply added');
         })
         .catch(err=>{
             console.log("lagg gayi!!!");
@@ -177,7 +180,7 @@ postsarea.addEventListener("click", (ev)=>{
             let count = countbtn.textContent;
             count--;
             likebtn.classList.remove('liked');
-            axios.post('/likeup',{id,count})
+            axios.post('/likecomment/likeup',{id,count})
             .then(()=>{
             })
             .catch(err=>{
@@ -204,32 +207,29 @@ postsarea.addEventListener("click", (ev)=>{
       }
 
 })
-
-
 askbox.addEventListener("click",(ev)=>{
     createbox.classList.add('as');
-    mainarea.classList.add('bc');
+    // mainarea.classList.add('bc');
 })
+hidebtn.addEventListener('click',(ev)=>{
+    createbox.classList.remove('as');
+    // mainarea.classList.remove('bc');
+    // postform.style.visibility='hidden';
+})
+
 // add_question.addEventListener("click",(ev)=>{
 //     createbox.classList.add('as');
 //     mainarea.classList.add('bc');
 // })
-hidebtn.addEventListener('click',(ev)=>{
-    ev.preventDefault;
-    createbox.classList.remove('as');
-    mainarea.classList.remove('bc');
-    postform.style.visibility='hidden';
-})
-
-createpost.addEventListener('click',(ev)=>{
-    askquestion.classList.remove('askquestion');
-    createpost.classList.add('create');
-    questionform.classList.add('hide');
-    postform.style.visibility='visible';
-})
-askquestion.addEventListener('click',(ev)=>{
-    askquestion.classList.add('askquestion');
-    createpost.classList.remove('create');
-    questionform.classList.remove('hide');
-    postform.style.visibility='hidden';
-})
+// createpost.addEventListener('click',(ev)=>{
+//     askquestion.classList.remove('askquestion');
+//     createpost.classList.add('create');
+//     questionform.classList.add('hide');
+//     postform.style.visibility='visible';
+// })
+// askquestion.addEventListener('click',(ev)=>{
+//     askquestion.classList.add('askquestion');
+//     createpost.classList.remove('create');
+//     questionform.classList.remove('hide');
+//     postform.style.visibility='hidden';
+// })
